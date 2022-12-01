@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace FCB\Http\Controllers;
 
-use App\Models\GroupUser;
+use FCB\Models\GroupUser;
 use Illuminate\Http\Request;
 
 class GroupUserController extends Controller
@@ -41,7 +41,7 @@ class GroupUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\GroupUser  $groupUser
+     * @param  \FCB\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function show(GroupUser $groupUser)
@@ -52,7 +52,7 @@ class GroupUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\GroupUser  $groupUser
+     * @param  \FCB\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function edit(GroupUser $groupUser)
@@ -64,7 +64,7 @@ class GroupUserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\GroupUser  $groupUser
+     * @param  \FCB\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, GroupUser $groupUser)
@@ -75,7 +75,7 @@ class GroupUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\GroupUser  $groupUser
+     * @param  \FCB\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function destroy(GroupUser $groupUser)

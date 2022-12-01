@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace FCB\Http\Controllers;
 
-use App\Models\Group;
+use FCB\Models\Group;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -35,13 +35,19 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        try {
+            Group::create($request->all());
+            return response()->json(['message' => 'success']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: '.$e->getMessage()]);
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \FCB\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
     public function show(Group $group)
@@ -52,7 +58,7 @@ class GroupController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \FCB\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
     public function edit(Group $group)
@@ -64,7 +70,7 @@ class GroupController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Group  $group
+     * @param  \FCB\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Group $group)
@@ -75,7 +81,7 @@ class GroupController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \FCB\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
     public function destroy(Group $group)

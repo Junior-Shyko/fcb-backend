@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace FCB\Http\Controllers;
 
-use App\Models\Link;
+use FCB\Models\Link;
 use Illuminate\Http\Request;
 
 class LinkController extends Controller
@@ -41,7 +41,7 @@ class LinkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \FCB\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
     public function show(Link $link)
@@ -52,7 +52,7 @@ class LinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \FCB\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
     public function edit(Link $link)
@@ -64,7 +64,7 @@ class LinkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Link  $link
+     * @param  \FCB\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Link $link)
@@ -75,7 +75,7 @@ class LinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \FCB\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
     public function destroy(Link $link)
