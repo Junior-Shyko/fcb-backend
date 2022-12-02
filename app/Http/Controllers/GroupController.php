@@ -14,7 +14,12 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+       try {
+           $group = Group::select('id', 'name', 'created_at')->orderBy('id', 'desc')->get();
+           return response()->json($group);
+       } catch (Exception $e) {
+           return response()->json(['Error: '.$e->getMessage()]);
+       }
     }
 
     /**
@@ -35,7 +40,7 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        //dd($request->all());
         try {
             Group::create($request->all());
             return response()->json(['message' => 'success']);

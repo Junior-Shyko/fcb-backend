@@ -19,5 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::post('/group' , [GroupController::class, 'store']);
+Route::prefix('v1')->group(function () {
+    Route::get('group' , [GroupController::class, 'index']);
+    Route::post('group' , [GroupController::class, 'store']);
+});
