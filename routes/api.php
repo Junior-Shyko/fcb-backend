@@ -22,4 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function () {
     Route::get('group' , [GroupController::class, 'index']);
     Route::post('group' , [GroupController::class, 'store']);
+    Route::post('group/{id}' , [GroupController::class, 'edit']);
+    Route::get('group/{id}' , [GroupController::class, 'show']);
 });
