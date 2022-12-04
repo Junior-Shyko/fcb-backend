@@ -55,9 +55,14 @@ class GroupController extends Controller
      * @param  \FCB\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show($id)
     {
-        //
+        try {
+            $group = Group::findOrFail($id)->first();
+            return response()->json($group);
+        } catch (Exception $e) {
+            return response()->json(['Error: '.$e->getMessage()]);
+        }
     }
 
     /**
@@ -66,9 +71,16 @@ class GroupController extends Controller
      * @param  \FCB\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function edit(Group $group)
+    public function edit(Request $request, $id)
     {
-        //
+        try {
+            $group = Group::findOrFail($id)->first();
+            $group->name = $request['name'];
+            $group->save();
+            return response()->json(['message' => 'Nome alterado c/ sucesso!', 'type'=>'success']);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -80,7 +92,8 @@ class GroupController extends Controller
      */
     public function update(Request $request, Group $group)
     {
-        //
+        
+        
     }
 
     /**
