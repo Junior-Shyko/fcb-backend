@@ -58,7 +58,7 @@ class GroupController extends Controller
     public function show($id)
     {
         try {
-            $group = Group::findOrFail($id)->first();
+            $group = Group::findOrFail($id);
             return response()->json($group);
         } catch (Exception $e) {
             return response()->json(['Error: '.$e->getMessage()]);

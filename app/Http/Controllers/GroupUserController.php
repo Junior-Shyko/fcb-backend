@@ -2,8 +2,10 @@
 
 namespace FCB\Http\Controllers;
 
+use FCB\Models\User;
 use FCB\Models\GroupUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GroupUserController extends Controller
 {
@@ -14,7 +16,15 @@ class GroupUserController extends Controller
      */
     public function index()
     {
-        //
+        $users = DB::table('group_users')
+            ->join('users', 'group_users.user_id', '=', 'users.id')
+            ->join('groups', 'group_users.group_id', '=', 'groups.id')
+            ->join('links', 'users.link_id', '=', 'links.id')
+            ->select('users.id as idUser', 'users.name as nameUser',
+            'group_users.group_id','group_users.user_id', 'groups.id as idGroup', 'groups.name as nameGroup', 
+            'links.id as idLink', 'links.name as nameLink')
+            ->get();
+        return response()->json($users);
     }
 
     /**
