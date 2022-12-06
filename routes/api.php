@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use FCB\Http\Controllers\GroupController;
 use FCB\Http\Controllers\GroupUserController;
+use FCB\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,6 @@ Route::prefix('v1')->group(function () {
     Route::get('group/{id}' , [GroupController::class, 'show']);
 
     Route::get('user-group', [GroupUserController::class, 'index']);
+    Route::get('list-member/{member}' , [UserController::class, 'getMember']);
+
 });

@@ -18,9 +18,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'email', 'password', 'address',
+        'number', 'complement', 'district', 'city',
+        'state', 'phone', 'situation', 'birthday',
+        'marital_status', 'batizado', 'link_id'
     ];
 
     /**
@@ -41,4 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+    *Função que retorna o id do tipo de membro
+    */
+    static function nameMemberToType($type)
+    {
+        $link = Link::where('name' , $type)->first();
+        return $link->id;
+    }
 }
