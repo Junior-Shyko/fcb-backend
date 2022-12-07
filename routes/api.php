@@ -28,6 +28,7 @@ Route::prefix('v1')->group(function () {
     Route::get('group/{id}' , [GroupController::class, 'show']);
 
     Route::get('user-group', [GroupUserController::class, 'index']);
+    Route::post('user-group', [GroupUserController::class, 'store']);
     Route::get('list-member/{member}' , [UserController::class, 'getMember']);
 
 });
