@@ -21,7 +21,7 @@ class GroupUserController extends Controller
             ->join('groups', 'group_users.group_id', '=', 'groups.id')
             ->join('links', 'users.link_id', '=', 'links.id')
             ->select('users.id as idUser', 'users.name as nameUser',
-            'group_users.group_id','group_users.user_id', 'groups.id as idGroup', 'groups.name as nameGroup', 
+            'group_users.group_id','group_users.user_id', 'group_users.id as id', 'groups.id as idGroup', 'groups.name as nameGroup', 
             'links.id as idLink', 'links.name as nameLink')
             ->get();
         return response()->json($users);
@@ -45,7 +45,12 @@ class GroupUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       try {
+            GroupUser::create($request->all());
+            return response()->json(['message' => 'Membro inserido no grupo', 'type'=> 'success'], 200);
+       } catch (\Throwable $th) {
+            return response()->json(['error: ' => 'Erro: '.$th->getMessage()], 400);
+       }
     }
 
     /**
