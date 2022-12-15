@@ -74,7 +74,7 @@ class GroupController extends Controller
     public function edit(Request $request, $id)
     {
         try {
-            $group = Group::findOrFail($id)->first();
+            $group = Group::findOrFail($id);
             $group->name = $request['name'];
             $group->save();
             return response()->json(['message' => 'Nome alterado c/ sucesso!', 'type'=>'success']);
@@ -102,8 +102,18 @@ class GroupController extends Controller
      * @param  \FCB\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Group $group)
+    public function destroy($idGroup)
     {
-        //
+        try {
+            $group = Group::find($idGroup);
+            $group->delete();
+            //SE TIVER REGISTRO NA TABELA GROUPS_USER TBM DEVE SER EXCLUÍO
+            return response()->json([
+                'message' => 'Grupo Excluído com sucesso',
+                'type' => 'sucess'
+            ]);
+        } catch (Exception $e) {
+             return response()->json(['error' => $e->getMessage()]);
+        }
     }
 }

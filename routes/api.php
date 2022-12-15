@@ -26,9 +26,11 @@ Route::prefix('v1')->group(function () {
     Route::post('group' , [GroupController::class, 'store']);
     Route::post('group/{id}' , [GroupController::class, 'edit']);
     Route::get('group/{id}' , [GroupController::class, 'show']);
+    Route::delete('group/{id}' , [GroupController::class, 'destroy']);
 
     Route::get('user-group', [GroupUserController::class, 'index']);
     Route::post('user-group', [GroupUserController::class, 'store']);
+    Route::get('user-group/{id}' , [GroupUserController::class, 'show']);
     Route::get('list-member/{member}' , [UserController::class, 'getMember']);
 
 });

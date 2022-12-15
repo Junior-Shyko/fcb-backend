@@ -59,9 +59,26 @@ class GroupUserController extends Controller
      * @param  \FCB\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
-    public function show(GroupUser $groupUser)
+    public function show($idGroupUser)
     {
-        //
+        try {
+            // $usersGroup = GroupUser::where('group_id', $idGroupUser)->get();
+            $usersGroup = DB::table('group_users')
+            ->join('users', 'group_users.user_id', '=', 'users.id')
+            ->join('groups', 'group_users.group_id', '=', 'groups.id')
+            ->join('links', 'users.link_id', '=', 'links.id')
+            ->where('groups.id', $idGroupUser)
+            ->select('users.id as idUser', 'users.name as nameUser',
+            'group_users.group_id','group_users.user_id', 'group_users.id as id', 'groups.id as idGroup', 'groups.name as nameGroup', 
+            'links.id as idLink', 'links.name as nameLink')
+            ->get();
+            if(count($usersGroup) > 0) {
+                return response()->json($usersGroup);
+            }
+             return response()->json(['data' => '']);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()]);
+        }
     }
 
     /**
