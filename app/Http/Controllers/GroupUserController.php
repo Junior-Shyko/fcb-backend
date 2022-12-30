@@ -110,8 +110,20 @@ class GroupUserController extends Controller
      * @param  \FCB\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GroupUser $groupUser)
+    public function destroy($idGroupUser)
     {
-        //
+        try {
+            $groupUser = GroupUser::find($idGroupUser);
+            $groupUser->delete();
+            return response()->json([
+                'message' => 'Membro Excluído com sucesso',
+                'type' => 'success'
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => 'Ocorreu um erro: '.$e->getMessage(),
+                'type' => 'error'
+            ]);
+        }
     }
 }

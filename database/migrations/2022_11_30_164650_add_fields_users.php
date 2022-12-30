@@ -24,7 +24,7 @@ return new class extends Migration
            $table->string('situation' , 25)->nullable();
            $table->date('birthday')->nullable();
            $table->string('marital_status')->nullable();
-           $table->boolean('batizado')->nullable();
+           $table->boolean('baptized')->nullable();
         });
     }
 

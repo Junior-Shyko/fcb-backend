@@ -15,4 +15,9 @@ class Group extends Model
 	    'created_at' => 'datetime:d/m/Y', // Change your format
 	    'updated_at' => 'datetime:d/m/Y',
 	];
+
+	public function usersGroup()
+    {
+        return $this->hasMany('FCB\Models\GroupUser');
+    }
 }

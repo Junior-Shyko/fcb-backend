@@ -57,6 +57,8 @@ class GroupController extends Controller
      */
     public function show($id)
     {
+        // $group = Group::find($id);
+        // dd($group->usersGroup);
         try {
             $group = Group::findOrFail($id);
             return response()->json($group);
@@ -106,14 +108,17 @@ class GroupController extends Controller
     {
         try {
             $group = Group::find($idGroup);
+            //EXCLUINDO OS RELACIONAMENTOS
+            $group->usersGroup()->delete();
+            //EXCLUINDO O GRUPO
             $group->delete();
-            //SE TIVER REGISTRO NA TABELA GROUPS_USER TBM DEVE SER EXCLUÍO
+            // //SE TIVER REGISTRO NA TABELA GROUPS_USER TBM DEVE SER EXCLUÍO
             return response()->json([
                 'message' => 'Grupo Excluído com sucesso',
                 'type' => 'sucess'
             ]);
         } catch (Exception $e) {
-             return response()->json(['error' => $e->getMessage()]);
+            return response()->json(['error' => $e->getMessage()]);
         }
     }
 }

@@ -31,6 +31,10 @@ Route::prefix('v1')->group(function () {
     Route::get('user-group', [GroupUserController::class, 'index']);
     Route::post('user-group', [GroupUserController::class, 'store']);
     Route::get('user-group/{id}' , [GroupUserController::class, 'show']);
+    Route::delete('user-group/{id}' , [GroupUserController::class, 'destroy']);
     Route::get('list-member/{member}' , [UserController::class, 'getMember']);
+
+    Route::post('create-user' , [UserController::class, 'store']);
+    Route::post('up-user/{id}' , [UserController::class, 'update']);
 
 });

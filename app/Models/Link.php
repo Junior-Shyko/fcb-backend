@@ -10,4 +10,9 @@ class Link extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    protected $casts = [
+	    'created_at' => 'datetime:d/m/Y', // Change your format
+	    'updated_at' => 'datetime:d/m/Y',
+	];
 }

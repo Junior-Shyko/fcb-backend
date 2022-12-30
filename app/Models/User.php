@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name', 'email', 'password', 'address',
         'number', 'complement', 'district', 'city',
         'state', 'phone', 'situation', 'birthday',
-        'marital_status', 'batizado', 'link_id'
+        'marital_status', 'baptized', 'link_id'
     ];
 
     /**
