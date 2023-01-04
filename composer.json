@@ -10,7 +10,8 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "nesbot/carbon": "^2.64"
+        "nesbot/carbon": "^2.64",
+        "tymon/jwt-auth": "^1.0@dev"
     },
     "require-dev": {
         "dragon-code/laravel-app": "^1.2",

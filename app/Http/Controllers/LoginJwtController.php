@@ -20,7 +20,7 @@ class LoginJwtController extends Controller
        
         //Validando autenticação
         if (! $token = auth('api')->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['message' => 'Não Autorizado'], 401);
         }
         
         // $token = auth()->claims(['name' => auth()->user()->name])->attempt($credentials);
@@ -37,7 +37,8 @@ class LoginJwtController extends Controller
      */
     public function me()
     {
-        return response()->json(auth()->user());
+        $user = auth('api')->user();
+        return response()->json($user->only(['name', 'email', 'created_at']));
     }
 
     /**
