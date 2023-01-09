@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User\ProfileController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
