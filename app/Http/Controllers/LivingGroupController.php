@@ -1,8 +1,8 @@
 <?php
 
-namespace FCB\Http\Controllers;
+namespace App\Http\Controllers;
 
-use FCB\Models\LivingGroup;
+use App\Models\LivingGroup;
 use Illuminate\Http\Request;
 
 class LivingGroupController extends Controller
@@ -41,7 +41,7 @@ class LivingGroupController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \FCB\Models\LivingGroup  $livingGroup
+     * @param  \App\Models\LivingGroup  $livingGroup
      * @return \Illuminate\Http\Response
      */
     public function show(LivingGroup $livingGroup)
@@ -52,7 +52,7 @@ class LivingGroupController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \FCB\Models\LivingGroup  $livingGroup
+     * @param  \App\Models\LivingGroup  $livingGroup
      * @return \Illuminate\Http\Response
      */
     public function edit(LivingGroup $livingGroup)
@@ -64,7 +64,7 @@ class LivingGroupController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \FCB\Models\LivingGroup  $livingGroup
+     * @param  \App\Models\LivingGroup  $livingGroup
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, LivingGroup $livingGroup)
@@ -75,7 +75,7 @@ class LivingGroupController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \FCB\Models\LivingGroup  $livingGroup
+     * @param  \App\Models\LivingGroup  $livingGroup
      * @return \Illuminate\Http\Response
      */
     public function destroy(LivingGroup $livingGroup)

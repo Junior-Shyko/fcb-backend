@@ -26,8 +26,8 @@ Ainda precisamos seguir todas documentação do Laravel dando permissão para a 
  sudo chmod -R ug+rwx storage bootstrap/cache`
 #### BUG
 Caso aconteça algum erro em relação as classes geradas do Beezer, vc deve trocar o namespace para  FCV, por exemplo:
-`namespace  FCB\`
-`use FCB\ `
+`namespace  App\`
+`use App\ `
 Agora é só acessar http://localhost:38000/
 
 

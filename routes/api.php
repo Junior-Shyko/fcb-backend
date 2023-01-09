@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use FCB\Http\Controllers\GroupController;
-use FCB\Http\Controllers\GroupUserController;
-use FCB\Http\Controllers\UserController;
-use FCB\Http\Controllers\LoginJwtController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\GroupUserController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginJwtController;
 
 /*
 |--------------------------------------------------------------------------

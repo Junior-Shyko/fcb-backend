@@ -1,9 +1,9 @@
 <?php
 
-namespace FCB\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use FCB\Http\Controllers\Controller;
-use FCB\Providers\RouteServiceProvider;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 

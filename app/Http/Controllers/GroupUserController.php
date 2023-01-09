@@ -1,9 +1,9 @@
 <?php
 
-namespace FCB\Http\Controllers;
+namespace App\Http\Controllers;
 
-use FCB\Models\User;
-use FCB\Models\GroupUser;
+use App\Models\User;
+use App\Models\GroupUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -56,7 +56,7 @@ class GroupUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \FCB\Models\GroupUser  $groupUser
+     * @param  \App\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function show($idGroupUser)
@@ -84,7 +84,7 @@ class GroupUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \FCB\Models\GroupUser  $groupUser
+     * @param  \App\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function edit(GroupUser $groupUser)
@@ -96,7 +96,7 @@ class GroupUserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \FCB\Models\GroupUser  $groupUser
+     * @param  \App\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, GroupUser $groupUser)
@@ -107,7 +107,7 @@ class GroupUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \FCB\Models\GroupUser  $groupUser
+     * @param  \App\Models\GroupUser  $groupUser
      * @return \Illuminate\Http\Response
      */
     public function destroy($idGroupUser)

@@ -1,10 +1,10 @@
 <?php
 
-namespace FCB\Http\Controllers;
+namespace App\Http\Controllers;
 
-use FCB\Models\Link;
-use FCB\Models\User;
-use FCB\Models\GroupUser;
+use App\Models\Link;
+use App\Models\User;
+use App\Models\GroupUser;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 

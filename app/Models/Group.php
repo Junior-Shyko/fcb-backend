@@ -1,6 +1,6 @@
 <?php
 
-namespace FCB\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +18,6 @@ class Group extends Model
 
 	public function usersGroup()
     {
-        return $this->hasMany('FCB\Models\GroupUser');
+        return $this->hasMany('App\Models\GroupUser');
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace FCB\Http\Controllers;
+namespace App\Http\Controllers;
 
-use FCB\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;

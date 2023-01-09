@@ -1,8 +1,8 @@
 <?php
 
-namespace FCB\Http\Middleware;
+namespace App\Http\Middleware;
 
-use FCB\Providers\RouteServiceProvider;
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

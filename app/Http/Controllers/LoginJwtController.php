@@ -1,10 +1,10 @@
 <?php
 
-namespace FCB\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Http\Request;
-use FCB\Http\Requests\LoginJwtRequest;
+use App\Http\Requests\LoginJwtRequest;
 use Illuminate\Support\Facades\Validator;
 
 class LoginJwtController extends Controller
