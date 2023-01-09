@@ -1,8 +1,8 @@
 <?php
 
-namespace FCB\Http\Requests;
+namespace App\Http\Requests;
 
-use FCB\Models\User;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 

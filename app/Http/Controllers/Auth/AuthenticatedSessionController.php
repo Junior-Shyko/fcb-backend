@@ -1,10 +1,10 @@
 <?php
 
-namespace FCB\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use FCB\Http\Controllers\Controller;
-use FCB\Http\Requests\Auth\LoginRequest;
-use FCB\Providers\RouteServiceProvider;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +23,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      *
-     * @param  \FCB\Http\Requests\Auth\LoginRequest  $request
+     * @param  \App\Http\Requests\Auth\LoginRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(LoginRequest $request)

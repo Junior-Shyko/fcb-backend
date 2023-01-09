@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
-use FCB\Models\User;
+use App\Models\User;
 use FCB\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;

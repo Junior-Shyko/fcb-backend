@@ -1,10 +1,10 @@
 <?php
 
-namespace FCB\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use FCB\Http\Controllers\Controller;
-use FCB\Models\User;
-use FCB\Providers\RouteServiceProvider;
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
