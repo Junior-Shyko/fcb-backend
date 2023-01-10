@@ -49,6 +49,7 @@ Route::prefix('v1')->group(function () {
 
     Route::prefix('user')->group(function () {
         Route::get('count', [UserController::class, 'countGeneral']);
+        Route::get('all', [UserController::class, 'allUsers']);
     });
     Route::prefix('groups')->group(function () {
         Route::get('count', [GroupController::class, 'countGeneral']);

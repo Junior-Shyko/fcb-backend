@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Link;
 use App\Models\User;
 use App\Models\GroupUser;
+use App\Repository\UserRepository;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -126,4 +127,15 @@ class UserController extends Controller
         }
     }
 
+
+    public function allUsers()
+    {
+        
+        try {
+            $users = new UserRepository;
+            return response()->json($users->allUsers());
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }
