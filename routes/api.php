@@ -47,8 +47,16 @@ Route::prefix('v1')->group(function () {
         Route::post('me', [LoginJwtController::class, 'me']);
     });
 
+    Route::prefix('user')->group(function () {
+        Route::get('count', [UserController::class, 'countGeneral']);
+    });
+    Route::prefix('groups')->group(function () {
+        Route::get('count', [GroupController::class, 'countGeneral']);
+    });
+
     Route::group(['middleware' => 'jwt.auth'], function() {
         Route::get('user-group', [GroupUserController::class, 'index']);
+        
     });
     
 });

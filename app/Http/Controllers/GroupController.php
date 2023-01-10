@@ -121,4 +121,10 @@ class GroupController extends Controller
             return response()->json(['error' => $e->getMessage()]);
         }
     }
+
+    public function countGeneral()
+    {
+        $group = Group::get();
+        return response()->json(['message' => count($group)]);
+    }
 }

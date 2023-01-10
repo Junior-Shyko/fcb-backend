@@ -116,4 +116,14 @@ class UserController extends Controller
         return response()->json($users);
     }
 
+    public function countGeneral()
+    {
+        try {
+            $user = User::where('active', 1)->get();
+            return response()->json(['message' => count($user)], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Erro Inesperado'], 400);
+        }
+    }
+
 }
