@@ -24,6 +24,14 @@ Agora com todas as tabelas criadas precisamos criar os dados iniciais, rodando a
 Ainda precisamos seguir todas documentação do Laravel dando permissão para a pasta Storage
 `sudo chgrp -R www-data storage bootstrap/cache
  sudo chmod -R ug+rwx storage bootstrap/cache`
+
+ ### MIGRATIONS
+ Rodar as migrations na seguinte ordem
+ `docker-compose exec php-fpm php artisan db:seed --class=GroupsSeeder`
+ `docker-compose exec php-fpm php artisan db:seed --class=UsersGroupsSeeder`
+ `docker-compose exec php-fpm php artisan db:seed --class= GroupsUsersSeeders`
+
+
 #### BUG
 Caso aconteça algum erro em relação as classes geradas do Beezer, vc deve trocar o namespace para  FCV, por exemplo:
 `namespace  App\`
