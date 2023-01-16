@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Repository\UserRepository;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Requests\LoginJwtRequest;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,8 +39,9 @@ class LoginJwtController extends Controller
      */
     public function me()
     {
-        $user = auth('api')->user();
-        return response()->json($user->only(['name', 'email', 'created_at']));
+        $auth = auth('api')->user();
+        $user = new UserRepository;
+        return response()->json($user->getGroups($auth->id));
     }
 
     /**
