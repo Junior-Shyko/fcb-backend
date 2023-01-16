@@ -55,6 +55,7 @@ Route::prefix('v1')->group(function () {
             Route::get('count', [UserController::class, 'countGeneral']);
             Route::get('all', [UserController::class, 'allUsers']);
             Route::get('birth' , [UserController::class, 'birthMonth']);
+            Route::get('show/{id}' , [UserController::class, 'show']);
         });
         Route::prefix('groups')->group(function () {
             Route::get('count', [GroupController::class, 'countGeneral']);

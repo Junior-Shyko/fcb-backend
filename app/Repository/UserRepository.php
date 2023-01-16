@@ -35,7 +35,7 @@ class UserRepository {
 						'groups.name as nameGroup', 'groups.id as idGroup'
 					)
 					->where('users.id', '=', $id)
-					->get();
+					->first();
 	}
 
 	public function getBirthMonth()

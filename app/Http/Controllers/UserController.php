@@ -60,7 +60,14 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+           $userData = new UserRepository;
+           $data = $userData->getGroups($id);
+           return response()->json($data, 200); 
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Erro Inesperado!'], 400);
+        }
+       
     }
 
     /**
