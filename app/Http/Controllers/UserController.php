@@ -138,4 +138,14 @@ class UserController extends Controller
             //throw $th;
         }
     }
+
+    public function birthMonth()
+    {
+        try {
+            $users = new UserRepository;
+         return response()->json($users->getBirthMonth());
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Erro Inesperado'], 400);
+        }
+    }
 }

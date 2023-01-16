@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -35,6 +36,16 @@ class UserRepository {
 					)
 					->where('users.id', '=', $id)
 					->get();
+	}
+
+	public function getBirthMonth()
+	{
+		//INTANCIA PARA OBTER O MES ATUAL
+		$now = Carbon::now();
+		//TODOS USUARIOS Q FAZEM NIVER NO MES ATUAL QUE ESTEVAM ATIVOS
+		return User::whereMonth('birthday', $now->month)
+				->where('active','=',1)
+                ->get();
 	}
 
 }
